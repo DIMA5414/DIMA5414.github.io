@@ -7,18 +7,42 @@
 </form>
 <p id="loginMessage">Please Login!</p>
 
-<script type="text/javascript">
-    function validateForm() {
-        var un = document.loginForm.username.value;
-        var pw = document.loginForm.password.value;
-        var username = "MitchWardle"; 
-        var password = "123abc456";
-        if ((un == username) && (pw == password)) {
-            window.location = "content.html";
-            return false;
-        }
-        else {
-            alert ("Login was unsuccessful, please check your username and password");
-        }
-    }
+<script 
+   Private Sub Кнопка1_Click()
+ 
+If IsNull(Me.txtLogin) Then
+    MsgBox "Введите логин", vbInformation, "Требуется логин!"
+    Me.txtLogin.SetFocus
+ElseIf IsNull(Me.txtPassword) Then
+    MsgBox "Введите пароль", vbInformation, "Требуется пароль!"
+    Me.txtPassword.SetFocus
+Else
+    'process the job
+        
+    If (IsNull(DLookup("UserLogin", "Авторизация_Т", "UserLogin='" & Me.txtLogin.Value & "'"))) Or _
+    (IsNull(DLookup("password", "Авторизация_Т", "Password='" & Me.txtPassword.Value & "'"))) Then
+        MsgBox "Неверный логин или пароль"
+   
+     Else
+        UserLevel = DLookup("UserSecurity", "Авторизация_Т", "UserLogin = '" & Me.txtLogin.Value & "'")
+        DoCmd.Close
+    End If
+ 
+End If
+End Sub
+</script>
+
+<script 
+   Else
+        UserLevel = DLookup("UserSecurity", "Авторизация_Т", "UserLogin = '" & Me.txtLogin.Value & "'")
+        a = Me.txtPassword.Value
+             if a = userlevel then 
+             DoCmd.Close
+          else 
+          MsgBox "Неверный логин или пароль"
+         end if
+</script>
+
+<script 
+   
 </script>
