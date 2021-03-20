@@ -1,122 +1,24 @@
-<html lang="en"><head>
+<form id="loginForm"> 
+    <p id="usernameLabel">Username:</p>
+    <input type="text" name="username" id="username" placeholder="username"/><br>
+    <p id="passwordLabel">Password: </p>
+    <input type="password" name="password" id="password" placeholder="password"/><br>
+    <input id="loginButton" type="submit" value="Login!" onsubmit="validateForm()">
+</form>
+<p id="loginMessage">Please Login!</p>
 
-  <meta charset="UTF-8">
-  
-
-  <title>Авторизация</title>
-  
-  
-  
-  
-<style>
-*{
-  font-family: Tahoma;
-  padding:0;
-  margin:0;
-}
-.header{
-  background:green;
-  width:100%;
-  height:150px;
-}
-.vhod{
-  display:none;
-}
-.vhodv{
-  display:block;
-}
-.logo{
-  float:left;
-  padding:15px;
-}
-.login{
-  float:right;
-  padding-top:30px;
-  padding-right:60px;
-  display:block;
-}
-.loginhidden{
-  display:none;
-}
-.logintext{
-  font-size:20px;
-}
-.formavt{
-  padding-top:10px;
-}
-.formavt input{
-  background:#23d8de;
-  height:25px;
-  width:200px;
-  border: 1px solid red;
-}
-.formavt button{
-  width:70px;
-  height:25px;
-  border: 2px solid red;
-  background: black;
-  color:#ffffff;
-}
-</style>
-
-  <script>
-  window.console = window.console || function(t) {};
+<script type="text/javascript">
+    function validateForm() {
+        var un = document.loginForm.username.value;
+        var pw = document.loginForm.password.value;
+        var username = "MitchWardle"; 
+        var password = "123abc456";
+        if ((un == username) && (pw == password)) {
+            window.location = "content.html";
+            return false;
+        }
+        else {
+            alert ("Login was unsuccessful, please check your username and password");
+        }
+    }
 </script>
-
-  
-  
-  <script>
-  if (document.location.search.match(/type=embed/gi)) {
-    window.parent.postMessage("resize", "*");
-  }
-</script>
-
-
-</head>
-
-<body translate="no">
-  <div class="container">
-  <div class="header">
-    
-    <div class="login">
-      <span class="logintext">Для входа на сайт автозизуйтесь</span>
-      <form class="formavt" action="form.php" method="POST">
-        <label>Форма авторизации</label>
-        <input type="text" name="login" placeholder="Введите логин" required="">
-        <input type="password" name="pass" placeholder="Введите пароль" required="">
-        <button type="button" onclick="sendform()">Войти</button>
-      </form>
-    </div>
-    <div class="vhod">
-      <span>Добро пожаловать уважаемый</span>
-      <span class="priv"></span><span class="priv"></span>
-    </div>
-  </div>
-</div>
-    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
-
-  
-      <script id="rendered-js">
-function sendform() {
-  var l = document.getElementsByClassName('login')[0];
-  l.classList.add('loginhidden');
-  var login = document.getElementsByTagName('input')[0].value;
-  var pass = document.getElementsByTagName('input')[1].value;
-  var e = document.getElementsByClassName('priv')[0];
-  var b = document.getElementsByClassName('priv')[1];
-  e.innerHTML = login;
-  b.innerHTML = pass;
-  var vhod = document.getElementsByClassName('vhod')[0];
-  vhod.classList.add('vhodv');
-}
-//# sourceURL=pen.js
-    </script>
-
-  
-
-
-
-
- 
-
-</body></html>
