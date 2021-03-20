@@ -1,17 +1,130 @@
-<html>
-<head>
-<meta name="google-site-verification" content="QoVDd7OS0RiW_ypJP9kPuXoEMxq5I7LRweNVdNZ1U6M" />
-<title> Мой заголовок </title>
+<html lang="en"><head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111">
+
+
+  <title>CodePen - Простая форма авторизации</title>
+  
+  
+  
+  
+<style>
+*{
+  font-family: Tahoma;
+  padding:0;
+  margin:0;
+}
+.header{
+  background:green;
+  width:100%;
+  height:150px;
+}
+.vhod{
+  display:none;
+}
+.vhodv{
+  display:block;
+}
+.logo{
+  float:left;
+  padding:15px;
+}
+.login{
+  float:right;
+  padding-top:30px;
+  padding-right:60px;
+  display:block;
+}
+.loginhidden{
+  display:none;
+}
+.logintext{
+  font-size:20px;
+}
+.formavt{
+  padding-top:10px;
+}
+.formavt input{
+  background:#23d8de;
+  height:25px;
+  width:200px;
+  border: 1px solid red;
+}
+.formavt button{
+  width:70px;
+  height:25px;
+  border: 2px solid red;
+  background: black;
+  color:#ffffff;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
 </head>
-<body>
-содержание страницы
-</body>
-</html>
+
+<body translate="no">
+  <div class="container">
+  <div class="header">
+    <div class="logo">
+      <img src="https://www.technative.io/wp-content/uploads/2017/02/Visa_logo.png" alt="Логотип" width="200">
+    </div>
+    <div class="login">
+      <span class="logintext">Для входа на сайт автозизуйтесь</span>
+      <form class="formavt" action="form.php" method="POST">
+        <label>Форма авторизации</label>
+        <input type="text" name="login" placeholder="Введите логин" required="">
+        <input type="password" name="pass" placeholder="Введите пароль" required="">
+        <button type="button" onclick="sendform()">Войти</button>
+      </form>
+    </div>
+    <div class="vhod">
+      <span>Добро пожаловать уважаемый</span>
+      <span class="priv"></span><span class="priv"></span>
+    </div>
+  </div>
+</div>
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+
+  
+      <script id="rendered-js">
+function sendform() {
+  var l = document.getElementsByClassName('login')[0];
+  l.classList.add('loginhidden');
+  var login = document.getElementsByTagName('input')[0].value;
+  var pass = document.getElementsByTagName('input')[1].value;
+  var e = document.getElementsByClassName('priv')[0];
+  var b = document.getElementsByClassName('priv')[1];
+  e.innerHTML = login;
+  b.innerHTML = pass;
+  var vhod = document.getElementsByClassName('vhod')[0];
+  vhod.classList.add('vhodv');
+}
+//# sourceURL=pen.js
+    </script>
+
+  
 
 
-<br /> 
-<form method="post">
-Username: <input type="text" name="user" /> <br /> 
-Password: <input type="password" name="pass" /> <br />
-<input type="submit" name="submit" value="Login" />
-</form> 
+
+
+ 
+</body></html>
